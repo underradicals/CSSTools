@@ -1,0 +1,176 @@
+html {
+  box-sizing: border-box;
+  color-scheme: light;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  // border: 1px solid gray;
+}
+
+body {
+  font-family: "Noto Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  background-color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+body {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+  padding-block: 0;
+}
+
+h1 {
+  font-weight: 300;
+  line-height: 4rem;
+  text-align: center;
+}
+
+.color-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 2rem;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-inline: 1rem;
+}
+
+.color-cell {
+  width: 100%;
+  min-width: 9.375rem;
+  line-height: 2rem;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline-start: 0.5rem;
+  padding-inline-end: 0.25rem;
+  border-radius: 9999px;
+  transition: background-color 0.15s ease-in-out;
+  position: relative;
+
+  &:hover:not([currentcolor]) {
+    background-color: #e6e6e6;
+  }
+
+
+  & p {
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    width: 100%;
+  }
+
+  & div {
+    width: 1.5rem;
+    height: 1.5rem;
+    align-self: center;
+    justify-self: end;
+    border-radius: 9999px;
+    border: 1px solid #b4b4b4;
+  }
+
+  & div.red {
+    background-color: red;
+    color: #eee;
+    font-weight: 500;
+  }
+
+  & div.green {
+    background-color: green;
+    color: #eee;
+    font-weight: 500;
+  }
+
+  & div.blue {
+    background-color: blue;
+    color: #eee;
+    font-weight: 500;
+  }
+
+  & div.cyan {
+    background-color: cyan;
+    color: #eee;
+    font-weight: 500;
+  }
+
+  & div.magenta {
+    background-color: magenta;
+    color: #eee;
+    font-weight: 500;
+    /* red + blue */
+  }
+
+  & div.yellow {
+    background-color: yellow;
+    font-weight: 500;
+  }
+
+  & div.orange {
+    background-color: orange;
+    font-weight: 500;
+  }
+
+  & div.chartreuse {
+    background-color: chartreuse;
+    font-weight: 500;
+  }
+
+  & div.springgreen {
+    background-color: springgreen;
+    font-weight: 500;
+  }
+
+  & div.azure {
+    background-color: azure;
+    font-weight: 500;
+  }
+
+  & div.violet {
+    background-color: violet;
+    font-weight: 500;
+  }
+
+  & div.rose {
+    background-color: color-mix(in srgb, red, violet);
+    font-weight: 500;
+  }
+}
+
+.sliding-window {
+  --sliding_window_pos: 0;
+  background-color: #333333;
+  height: 2rem;
+  position: absolute;
+  z-index: -1;
+  border-radius: 9999px;
+  transform: translateX(var(--sliding_window_pos));
+  transition: transform 0.3s ease-in-out;
+}
+
+.current-color-bar {
+  text-align: center;
+
+  h2 {
+    font-weight: 300;
+    padding-block: 1rem;
+  }
+}
+
+[currentcolor] {
+  color: #eee;
+}
